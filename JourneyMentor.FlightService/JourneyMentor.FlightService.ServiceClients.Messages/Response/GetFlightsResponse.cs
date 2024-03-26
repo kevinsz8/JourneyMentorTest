@@ -1,9 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace JourneyMentor.FlightService.Models
+namespace JourneyMentor.FlightService.ServiceClients.Messages.Response
 {
-    [Table("Flight")]
-    public class Flight
+    public class GetFlightsResponse
     {
         public int Id { get; set; }
         public DateTime FlightDate { get; set; }
@@ -30,9 +33,9 @@ namespace JourneyMentor.FlightService.Models
         public int ArrivalDelay { get; set; }
         public DateTime ArrivalScheduled { get; set; }
         public DateTime ArrivalEstimated { get; set; }
-        public DateTime? ArrivalActual { get; set; }
-        public DateTime? ArrivalEstimatedRunway { get; set; }
-        public DateTime? ArrivalActualRunway { get; set; }
+        public DateTime ArrivalActual { get; set; }
+        public DateTime ArrivalEstimatedRunway { get; set; }
+        public DateTime ArrivalActualRunway { get; set; }
         public string AirlineName { get; set; }
         public string AirlineIata { get; set; }
         public string AirlineIcao { get; set; }

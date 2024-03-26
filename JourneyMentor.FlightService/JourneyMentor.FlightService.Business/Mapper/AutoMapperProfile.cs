@@ -1,10 +1,7 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+using JourneyMentor.FlightService.Business.Messages.Query.Request;
+using JourneyMentor.FlightService.ServiceClients.Messages.Request;
+using JourneyMentor.FlightService.ServiceClients.Messages.Response;
 
 namespace JourneyMentor.FlightService.Business.Mapper
 {
@@ -12,7 +9,10 @@ namespace JourneyMentor.FlightService.Business.Mapper
     {
         public AutoMapperProfile()
         {
+            CreateMap<GetFlightsHandlerRequest, GetFlightsRequest>();
+            CreateMap<GetFlightsResponse, Messages.Common.Flight>();
 
+            CreateMap<FlightService.Models.Flight, GetFlightsResponse>();
         }
     }
 }

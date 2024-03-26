@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\JourneyMentor.FlightService.ServiceClients.Messages\JourneyMentor.FlightService.ServiceClients.Messages.csproj" />
+  </ItemGroup>
+
 </Project>

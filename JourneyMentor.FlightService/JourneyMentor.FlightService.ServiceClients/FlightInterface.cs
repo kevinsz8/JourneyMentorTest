@@ -1,9 +1,11 @@
-﻿using JourneyMentor.FlightService.DataAccess;
+﻿using AutoMapper;
+using JourneyMentor.FlightService.DataAccess;
 using JourneyMentor.FlightService.Models;
+using JourneyMentor.FlightService.ServiceClients.Messages.Request;
 using JourneyMentor.FlightService.ServiceClients.Messages.Response;
 using JourneyMentor.FlightService.Services;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using System.Text.Json;
 
 namespace JourneyMentor.FlightService.ServiceClients
 {
@@ -11,11 +13,29 @@ namespace JourneyMentor.FlightService.ServiceClients
     {
         private readonly ApplicationDbContext _context;
         private readonly HttpClient _httpClient;
+        private readonly IMapper _mapper;
 
-        public FlightInterface(ApplicationDbContext context, HttpClient httpClient)
+        public FlightInterface(ApplicationDbContext context, HttpClient httpClient, IMapper mapper)
         {
             _context = context;
             _httpClient = httpClient;
+            _mapper = mapper;
+        }
+
+        public async Task<List<GetFlightsResponse>> GetFlights(GetFlightsRequest request)
+        {
+            var flightsQuery = _context.Flights.AsQueryable();
+
+            if (request.DepartureAirport != null || request.ArrivalAirport != null)
+            {
+                flightsQuery = flightsQuery.Where(x =>
+                    (request.DepartureAirport == null || x.DepartureAirport == request.DepartureAirport) &&
+                    (request.ArrivalAirport == null || x.ArrivalAirport == request.ArrivalAirport));
+            }
+
+            var flights = await flightsQuery.ToListAsync();
+
+            return _mapper.Map<List<GetFlightsResponse>>(flights);
         }
 
         public async Task ImportFlights(string apiUrl, string accessKey)

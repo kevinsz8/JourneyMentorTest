@@ -1,8 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace JourneyMentor.FlightService.Models
+namespace JourneyMentor.FlightService.Business.Messages.Common
 {
-    [Table("Flight")]
     public class Flight
     {
         public int Id { get; set; }
