@@ -9,13 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.9" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\JourneyMentor.AirportService.Business.Messages\JourneyMentor.AirportService.Business.Messages.csproj" />
+    <ProjectReference Include="..\JourneyMentor.AirportService.Business\JourneyMentor.AirportService.Business.csproj" />
+    <ProjectReference Include="..\JourneyMentor.AirportService.DataAccess\JourneyMentor.AirportService.DataAccess.csproj" />
+    <ProjectReference Include="..\JourneyMentor.AirportService.ServiceClients\JourneyMentor.AirportService.ServiceClients.csproj" />
   </ItemGroup>
 
 </Project>
