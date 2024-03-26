@@ -14,8 +14,4 @@
     <PackageReference Include="MediatR" Version="12.2.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\JourneyMentor.AirportService.Models\JourneyMentor.AirportService.Models.csproj" />
-  </ItemGroup>
-
 </Project>

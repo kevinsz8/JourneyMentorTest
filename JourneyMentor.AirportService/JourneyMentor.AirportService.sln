@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JourneyMentor.AirportServic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JourneyMentor.AirportService.ServiceClients", "JourneyMentor.AirportService.ServiceClients\JourneyMentor.AirportService.ServiceClients.csproj", "{4FAE992F-9294-47A1-9023-88318F70F882}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JourneyMentor.AirportService.ServiceClients.Messages", "JourneyMentor.AirportService.ServiceClients.Messages\JourneyMentor.AirportService.ServiceClients.Messages.csproj", "{7D454DEF-7BC2-4749-9E23-946AE858C62A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{4FAE992F-9294-47A1-9023-88318F70F882}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FAE992F-9294-47A1-9023-88318F70F882}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4FAE992F-9294-47A1-9023-88318F70F882}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D454DEF-7BC2-4749-9E23-946AE858C62A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D454DEF-7BC2-4749-9E23-946AE858C62A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D454DEF-7BC2-4749-9E23-946AE858C62A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D454DEF-7BC2-4749-9E23-946AE858C62A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,15 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Command\Response\" />
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR" Version="12.2.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\JourneyMentor.AirportService.Models\JourneyMentor.AirportService.Models.csproj" />
+    <ProjectReference Include="..\JourneyMentor.FlightService.Models\JourneyMentor.FlightService.Models.csproj" />
   </ItemGroup>
 
 </Project>

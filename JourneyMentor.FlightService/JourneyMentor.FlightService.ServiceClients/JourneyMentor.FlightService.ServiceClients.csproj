@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JourneyMentor.AirportService.DataAccess\JourneyMentor.FlightService.DataAccess.csproj" />
+    <ProjectReference Include="..\JourneyMentor.FlightService.ServiceClients.Messages\JourneyMentor.FlightService.ServiceClients.Messages.csproj" />
+    <ProjectReference Include="..\JourneyMentor.FlightService.Services\JourneyMentor.FlightService.Services.csproj" />
+  </ItemGroup>
+
+</Project>

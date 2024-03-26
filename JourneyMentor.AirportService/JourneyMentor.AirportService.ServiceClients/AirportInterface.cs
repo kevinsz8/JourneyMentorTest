@@ -1,6 +1,9 @@
 ﻿using JourneyMentor.AirportService.DataAccess;
 using JourneyMentor.AirportService.Models;
+using JourneyMentor.AirportService.ServiceClients.Messages.Request;
+using JourneyMentor.AirportService.ServiceClients.Messages.Response;
 using JourneyMentor.AirportService.Services;
+using Microsoft.EntityFrameworkCore;
 using Org.BouncyCastle.Crypto;
 using System.Net.Http;
 using System.Text.Json;
@@ -18,7 +21,26 @@ namespace JourneyMentor.AirportService.ServiceClients
             _httpClient = httpClient;
         }
 
-        public async Task ImportItems(string apiUrl, string accessKey)
+        public async Task<List<GetAirPortsResponse>> GetAirPorts(GetAirPortsRequest request)
+        {
+            var AirportData = await (from data in _context.Airports
+                                   select new GetAirPortsResponse
+                                   {
+                                       AirportId = data.AirportId,
+                                       AirportName = data.AirportName,
+                                       CountryName = data.CountryName,
+                                       IataCode = data.IataCode
+                                   }).ToListAsync();
+
+            if (request.PageSize > 0)
+            {
+                AirportData = AirportData.Take(request.PageSize).ToList();
+            }
+
+            return AirportData;
+        }
+
+        public async Task ImportAirports(string apiUrl, string accessKey)
         {
             try
             {
@@ -54,8 +76,17 @@ namespace JourneyMentor.AirportService.ServiceClients
                         var airport = new Airport
                         {
                             IataCode = airportElement.GetProperty("iata_code").GetString(),
+                            IcaoCode = airportElement.GetProperty("icao_code").GetString(),
+                            Latitude = float.Parse(airportElement.GetProperty("latitude").GetString()).ToString(),
+                            Longitude = float.Parse(airportElement.GetProperty("longitude").GetString()).ToString(),
+                            GeonameId = int.Parse(airportElement.GetProperty("geoname_id").GetString()).ToString(),
+                            Timezone = airportElement.GetProperty("timezone").GetString(),
+                            Gmt = int.Parse(airportElement.GetProperty("gmt").GetString()).ToString(),
+                            PhoneNumber = airportElement.GetProperty("phone_number").GetString(),
+                            CountryName = airportElement.GetProperty("country_name").GetString(),
+                            CountryIso2 = airportElement.GetProperty("country_iso2").GetString(),
+                            CityIataCode = airportElement.GetProperty("city_iata_code").GetString(),
                             AirportName = airportElement.GetProperty("airport_name").GetString()
-                            
                         };
                         allAirports.Add(airport);
                     }

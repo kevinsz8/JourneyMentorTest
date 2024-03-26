@@ -35,7 +35,7 @@ namespace JourneyMentor.AirportService.Business.Handlers
                 string apiUrl = _apiSettings.ApiUrl;
                 string accessKey = _apiSettings.AccessKey;
 
-                await _airportInterface.ImportItems(apiUrl, accessKey);
+                await _airportInterface.ImportAirports(apiUrl, accessKey);
                 return new Unit();
             }
             catch (Exception ex)

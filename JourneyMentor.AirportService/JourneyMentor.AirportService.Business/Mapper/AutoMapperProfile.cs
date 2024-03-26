@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using JourneyMentor.AirportService.Business.Messages.Common;
+using JourneyMentor.AirportService.Business.Messages.Query.Request;
+using JourneyMentor.AirportService.ServiceClients.Messages.Request;
+using JourneyMentor.AirportService.ServiceClients.Messages.Response;
 
 namespace JourneyMentor.AirportService.Business.Mapper
 {
@@ -11,7 +10,8 @@ namespace JourneyMentor.AirportService.Business.Mapper
     {
         public AutoMapperProfile()
         {
-
+            CreateMap<GetAirportsHandlerRequest, GetAirPortsRequest>();
+            CreateMap<GetAirPortsResponse, Airport>();
         }
     }
 }

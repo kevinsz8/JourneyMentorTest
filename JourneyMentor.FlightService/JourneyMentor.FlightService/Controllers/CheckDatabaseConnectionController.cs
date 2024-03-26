@@ -1,10 +1,9 @@
-﻿using JourneyMentor.AirportService.DataAccess;
+﻿using JourneyMentor.FlightService.DataAccess;
 using Microsoft.AspNetCore.Mvc;
 using System.Xml.Linq;
 
-namespace JourneyMentor.AirportService.Controllers
+namespace JourneyMentor.FlightService.Controllers
 {
-
     [ApiController]
     [Route("[controller]")]
     public class CheckDatabaseConnectionController : ControllerBase
