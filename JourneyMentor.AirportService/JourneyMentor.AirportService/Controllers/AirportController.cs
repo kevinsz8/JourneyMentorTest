@@ -17,7 +17,7 @@ namespace JourneyMentor.AirportService.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("importAirports")]
         [ProducesResponseType(typeof(Unit), 200)]
         public async Task<Unit> ImportAirports()
