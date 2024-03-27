@@ -8,7 +8,7 @@ namespace JourneyMentor.AirportService.Business.Messages.Common
 {
     public class Airport
     {
-        public string AirportId { get; set; }
+        public int? AirportId { get; set; }
 
         public string IataCode { get; set; }
         public string AirportName { get; set; }

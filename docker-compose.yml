@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql-journey
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 20040237
+      MYSQL_DATABASE: JourneyMentor
+      MYSQL_USER: ksanchez
+      MYSQL_PASSWORD: 20040237
+    networks:
+      - soar-network
+    ports:
+      - "3307:3307" 
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    hostname: mysql-serverjourney
+
+  airport-service:
+    build:
+      context: .
+      dockerfile: JourneyMentor.AirportService/JourneyMentor.AirportService/Dockerfile
+    container_name: airport-service
+    ports:
+      - "80:80"
+    networks:
+      - soar-network 
+    depends_on:
+      - mysql
+ 
+  flight-service:
+    build:
+      context: .
+      dockerfile: JourneyMentor.FlightService/JourneyMentor.FlightService/Dockerfile
+    container_name: flight-service
+    ports:
+      - "8088:8088"
+    networks:
+      - soar-network 
+    depends_on:
+      - mysql
+
+networks:
+  soar-network:
+    driver: bridge

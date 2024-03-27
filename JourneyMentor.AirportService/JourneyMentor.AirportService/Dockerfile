@@ -2,19 +2,19 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
-EXPOSE 80
-EXPOSE 443
+EXPOSE 8089
+EXPOSE 4443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["JourneyMentor.AirportService/JourneyMentor.AirportService.csproj", "JourneyMentor.AirportService/"]
+COPY ["JourneyMentor.AirportService/JourneyMentor.AirportService/JourneyMentor.AirportService.csproj", "JourneyMentor.AirportService/"]
 RUN dotnet restore "JourneyMentor.AirportService/JourneyMentor.AirportService.csproj"
 COPY . .
-WORKDIR "/src/JourneyMentor.AirportService"
+WORKDIR "/src/JourneyMentor.AirportService/JourneyMentor.AirportService"
 RUN dotnet build "JourneyMentor.AirportService.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "JourneyMentor.AirportService.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "JourneyMentor.AirportService.csproj" -c Release -o /app/publish /p:UseAppHost=true
 
 FROM base AS final
 WORKDIR /app

@@ -31,12 +31,12 @@ namespace JourneyMentor.FlightService.Controllers
         [HttpGet]
         [Route("getFlights")]
         [ProducesResponseType(typeof(GetFlightsHandlerResponse), 200)]
-        public async Task<GetFlightsHandlerResponse> GetFlights([FromQuery] int pageNumber = 1, [FromQuery] int pageSize = 10)
+        public async Task<GetFlightsHandlerResponse> GetFlights([FromQuery] string DepartureAirport, [FromQuery] string ArrivalAirport)
         {
             var request = new GetFlightsHandlerRequest()
             {
-                PageNumber = pageNumber,
-                PageSize = pageSize
+                DepartureAirport = DepartureAirport,
+                ArrivalAirport = ArrivalAirport
             };
 
             return await _mediator.Send(request);

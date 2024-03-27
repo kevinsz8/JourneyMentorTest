@@ -10,7 +10,7 @@ namespace JourneyMentor.AirportService.Models
 
         public string Gmt { get; set; }
 
-        public int AirportId { get; set; }
+        public int? AirportId { get; set; }
 
         public string IataCode { get; set; }
 
@@ -30,7 +30,7 @@ namespace JourneyMentor.AirportService.Models
 
         public string CountryName { get; set; }
 
-        public string PhoneNumber { get; set; }
+        public string? PhoneNumber { get; set; }
 
         public string Timezone { get; set; }
     }
