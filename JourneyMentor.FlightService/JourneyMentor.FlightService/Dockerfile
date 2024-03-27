@@ -2,8 +2,6 @@
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
-EXPOSE 8090
-EXPOSE 4434
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
@@ -14,7 +12,7 @@ WORKDIR "/src/JourneyMentor.FlightService/JourneyMentor.FlightService"
 RUN dotnet build "JourneyMentor.FlightService.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "JourneyMentor.FlightService.csproj" -c Release -o /app/publish /p:UseAppHost=true
+RUN dotnet publish "JourneyMentor.FlightService.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app

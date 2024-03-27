@@ -31,7 +31,7 @@ namespace JourneyMentor.FlightService.Controllers
         [HttpGet]
         [Route("getFlights")]
         [ProducesResponseType(typeof(GetFlightsHandlerResponse), 200)]
-        public async Task<GetFlightsHandlerResponse> GetFlights([FromQuery] string DepartureAirport, [FromQuery] string ArrivalAirport)
+        public async Task<GetFlightsHandlerResponse> GetFlights([FromQuery] string? DepartureAirport = null, [FromQuery] string? ArrivalAirport = null)
         {
             var request = new GetFlightsHandlerRequest()
             {
