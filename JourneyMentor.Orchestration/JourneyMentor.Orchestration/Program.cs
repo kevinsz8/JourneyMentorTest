@@ -1,16 +1,14 @@
-using JourneyMentor.FlightService.DataAccess;
-using JourneyMentor.FlightService.Business;
-using Microsoft.EntityFrameworkCore;
 using System.Reflection;
-using JourneyMentor.FlightService.Business.Mapper;
-using JourneyMentor.FlightService.Models.Config;
-using JourneyMentor.FlightService.ServiceClients;
-using JourneyMentor.FlightService.Services;
+using JourneyMentor.Orchestration.Business;
+using JourneyMentor.Orchestration.Business.Mappers;
+using JourneyMentor.Orchestration.Models;
+using JourneyMentor.Orchestration.ServiceClients;
+using JourneyMentor.Orchestration.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.WebHost.UseUrls("http://0.0.0.0:8088");
+builder.WebHost.UseUrls("http://0.0.0.0:8090");
 
 builder.Services.AddCors(o => o.AddPolicy("AllowAll", builder =>
 {
@@ -24,23 +22,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.Configure<AviationStackOptions>(builder.Configuration.GetSection(AviationStackOptions.AviationStackSettings));
+builder.Services.Configure<ServiceConfigOptions>(builder.Configuration.GetSection(ServiceConfigOptions.MicroserviceUrls));
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
-builder.Services.AddFlightHandlersModule();
+builder.Services.AddOrchestrationHandlersModule();
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
-builder.Services.AddHttpClient();
-
-var connString = builder.Configuration.GetValue<string>("ConnectionStrings:JourneyDBConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(o => o.UseMySQL(connectionString: connString));
-
-builder.Services.AddScoped<IFlightInterface, FlightInterface>();
-
-
+builder.Services.AddScoped<HttpClient>();
+builder.Services.AddScoped<HttpService>();
+builder.Services.AddScoped<IAirportInterface, AirportInterface>();
 
 var app = builder.Build();
 
-
-app.UsePathBase("/flightservice");
+app.UsePathBase("/orchestration");
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
 //{
@@ -51,7 +43,7 @@ app.UseSwagger();
 app.UseHttpsRedirection();
 app.UseRouting();
 
-app.UseCors("AllowAll");
+app.UseCors("AllowAll"); 
 
 app.UseAuthorization();
 

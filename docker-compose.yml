@@ -41,6 +41,19 @@ services:
       - soar-network 
     depends_on:
       - mysql
+ 
+  orchestration-service:
+    build:
+      context: .
+      dockerfile: JourneyMentor.Orchestration/JourneyMentor.Orchestration/Dockerfile
+    container_name: orchestration-service
+    ports:
+      - "8090:8090"
+    networks:
+      - soar-network 
+    depends_on:
+      - mysql 
+
 
 networks:
   soar-network:

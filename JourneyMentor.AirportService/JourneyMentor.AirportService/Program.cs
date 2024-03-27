@@ -12,6 +12,13 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.WebHost.UseUrls("http://0.0.0.0:8089");
 
+builder.Services.AddCors(o => o.AddPolicy("AllowAll", builder =>
+{
+    builder.AllowAnyOrigin()
+           .AllowAnyMethod()
+           .AllowAnyHeader();
+}));
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -30,6 +37,7 @@ builder.Services.AddScoped<IAirportInterface, AirportInterface>();
 
 var app = builder.Build();
 
+
 app.UsePathBase("/airportservice");
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
@@ -39,6 +47,9 @@ app.UseSwagger();
 //}
 
 app.UseHttpsRedirection();
+app.UseRouting();
+
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
 
