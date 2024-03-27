@@ -22,7 +22,7 @@ namespace JourneyMentor.FlightService.ServiceClients.Messages.Response
 
     public class FlightData
     {
-        public DateTime FlightDate { get; set; }
+        public string? FlightDate { get; set; }
         public string FlightStatus { get; set; }
         public Departure Departure { get; set; }
         public Arrival Arrival { get; set; }
@@ -41,11 +41,11 @@ namespace JourneyMentor.FlightService.ServiceClients.Messages.Response
         public string Terminal { get; set; }
         public string Gate { get; set; }
         public int Delay { get; set; }
-        public DateTime Scheduled { get; set; }
-        public DateTime Estimated { get; set; }
-        public DateTime? Actual { get; set; }
-        public DateTime? EstimatedRunway { get; set; }
-        public DateTime? ActualRunway { get; set; }
+        public string? Scheduled { get; set; }
+        public string? Estimated { get; set; }
+        public string? Actual { get; set; }
+        public string? EstimatedRunway { get; set; }
+        public string? ActualRunway { get; set; }
     }
 
     public class Arrival
@@ -58,11 +58,11 @@ namespace JourneyMentor.FlightService.ServiceClients.Messages.Response
         public string Gate { get; set; }
         public string Baggage { get; set; }
         public int Delay { get; set; }
-        public DateTime Scheduled { get; set; }
-        public DateTime Estimated { get; set; }
-        public DateTime? Actual { get; set; }
-        public DateTime? EstimatedRunway { get; set; }
-        public DateTime? ActualRunway { get; set; }
+        public string? Scheduled { get; set; }
+        public string? Estimated { get; set; }
+        public string? Actual { get; set; }
+        public string? EstimatedRunway { get; set; }
+        public string? ActualRunway { get; set; }
     }
 
     public class Airline
@@ -90,7 +90,7 @@ namespace JourneyMentor.FlightService.ServiceClients.Messages.Response
 
     public class Live
     {
-        public DateTime Updated { get; set; }
+        public string? Updated { get; set; }
         public float Latitude { get; set; }
         public float Longitude { get; set; }
         public float Altitude { get; set; }

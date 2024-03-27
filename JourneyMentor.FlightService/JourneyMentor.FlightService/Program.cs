@@ -10,6 +10,7 @@ using JourneyMentor.FlightService.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.WebHost.UseUrls("http://0.0.0.0:8088");
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -27,7 +28,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(o => o.UseMySQL(connectionSt
 
 builder.Services.AddScoped<IFlightInterface, FlightInterface>();
 
+
+
 var app = builder.Build();
+
+
 
 app.UsePathBase("/flightservice");
 // Configure the HTTP request pipeline.

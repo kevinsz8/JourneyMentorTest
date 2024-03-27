@@ -94,10 +94,14 @@ namespace JourneyMentor.AirportService.ServiceClients
                     var pagination = jsonDocument.RootElement.GetProperty("pagination");
                     int total = pagination.GetProperty("total").GetInt32();
                     offset += limit;
-                    if (offset >= total)
-                    {
-                        break; 
-                    }
+
+                    //Code commented because just to make 1 call to endpoint and not waste request
+
+                    //if (offset >= total)
+                    //{
+                    //    break; 
+                    //}
+                    break;
                 }
                 else
                 {
