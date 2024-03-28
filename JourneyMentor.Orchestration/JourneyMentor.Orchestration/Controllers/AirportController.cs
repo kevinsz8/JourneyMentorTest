@@ -1,4 +1,5 @@
-﻿using JourneyMentor.Orchestration.Business.Messages.Query.Request;
+﻿using JourneyMentor.Orchestration.Business.Messages.Command.Request;
+using JourneyMentor.Orchestration.Business.Messages.Query.Request;
 using JourneyMentor.Orchestration.Business.Messages.Query.Response;
 using MediatR;
 using Microsoft.AspNetCore.Cors;
@@ -8,7 +9,7 @@ namespace JourneyMentor.Orchestration.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    [EnableCors("MyPolicy")]
+    [EnableCors("AllowAll")]
     public class AirportController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -16,6 +17,17 @@ namespace JourneyMentor.Orchestration.Controllers
         public AirportController(IMediator mediator)
         {
             _mediator = mediator;
+        }
+
+        [HttpPost]
+        [Route("importAirports")]
+        [ProducesResponseType(typeof(Unit), 200)]
+        public async Task<Unit> ImportAirportHandler()
+        {
+            var request = new ImportAirportHandlerRequest();
+            var response = await _mediator.Send(request);
+
+            return response;
         }
 
 

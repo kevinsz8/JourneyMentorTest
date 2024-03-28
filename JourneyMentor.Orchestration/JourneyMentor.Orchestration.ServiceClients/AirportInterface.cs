@@ -3,6 +3,7 @@ using JourneyMentor.Orchestration.Models;
 using JourneyMentor.Orchestration.ServiceClients.Messages.Request;
 using JourneyMentor.Orchestration.ServiceClients.Messages.Response;
 using JourneyMentor.Orchestration.Services;
+using MediatR;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,12 @@ namespace JourneyMentor.Orchestration.ServiceClients
                 .Replace("{pageNumber}", request.PageNumber.ToString())
                 .Replace("{pageSize}", request.PageSize.ToString());
             return await _httpService.GetAsync<GetAirportResponse>(url);
+        }
+
+        public async Task<Unit> ImportAirport(ImportAirportRequest request)
+        {
+            var url = _options.ImportAirportEndpoint;
+            return await _httpService.PostAsync<ImportAirportRequest, Unit>(url, request);
         }
     }
 }
