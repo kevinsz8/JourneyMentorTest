@@ -27,6 +27,10 @@ namespace JourneyMentor.Orchestration.Business.Handlers
                 var requestI = _mapper.Map<GetFlightRequest>(request);
                 var res = await _FlightInterface.GetFlights(requestI);
 
+                if (res == null)
+                {
+                    throw new Exception("Flight response is null.");
+                }
                 var response = _mapper.Map<GetFlightsHandlerResponse>(res);
 
                 return response;
@@ -38,7 +42,7 @@ namespace JourneyMentor.Orchestration.Business.Handlers
                 var errorResponse = new GetFlightsHandlerResponse
                 {
                     StatusMessage = "Error",
-                    ErrorMessage = ex.InnerException.Message,
+                    ErrorMessage = ex.Message,
                     Success = false
                 };
 

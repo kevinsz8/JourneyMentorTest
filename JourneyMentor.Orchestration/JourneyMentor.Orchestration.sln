@@ -5,17 +5,19 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JourneyMentor.Orchestration", "JourneyMentor.Orchestration\JourneyMentor.Orchestration.csproj", "{0115442E-7E81-4A22-8A55-9B444C9070A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JourneyMentor.Orchestration.Business.Messages", "JourneyMentor.Orchestration.Business.Messages\JourneyMentor.Orchestration.Business.Messages.csproj", "{7867D9F1-A049-4D0C-9B45-BE90C0979600}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JourneyMentor.Orchestration.Business.Messages", "JourneyMentor.Orchestration.Business.Messages\JourneyMentor.Orchestration.Business.Messages.csproj", "{7867D9F1-A049-4D0C-9B45-BE90C0979600}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JourneyMentor.Orchestration.Business", "JourneyMentor.Orchestration.Business\JourneyMentor.Orchestration.Business.csproj", "{8C0B24A2-3A01-45B1-A85B-57C1946E52A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JourneyMentor.Orchestration.Business", "JourneyMentor.Orchestration.Business\JourneyMentor.Orchestration.Business.csproj", "{8C0B24A2-3A01-45B1-A85B-57C1946E52A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JourneyMentor.Orchestration.Models", "JourneyMentor.Orchestration.Models\JourneyMentor.Orchestration.Models.csproj", "{302B245B-B796-464C-8B6D-CB0630B6DB1F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JourneyMentor.Orchestration.Models", "JourneyMentor.Orchestration.Models\JourneyMentor.Orchestration.Models.csproj", "{302B245B-B796-464C-8B6D-CB0630B6DB1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JourneyMentor.Orchestration.Services", "JourneyMentor.Orchestration.Services\JourneyMentor.Orchestration.Services.csproj", "{E8783E11-5A67-4FB5-A8B1-4FF4F92D4F9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JourneyMentor.Orchestration.Services", "JourneyMentor.Orchestration.Services\JourneyMentor.Orchestration.Services.csproj", "{E8783E11-5A67-4FB5-A8B1-4FF4F92D4F9C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JourneyMentor.Orchestration.ServiceClients", "JourneyMentor.Orchestration.ServiceClients\JourneyMentor.Orchestration.ServiceClients.csproj", "{57904C40-A9D0-4C00-9635-A579093829A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JourneyMentor.Orchestration.ServiceClients", "JourneyMentor.Orchestration.ServiceClients\JourneyMentor.Orchestration.ServiceClients.csproj", "{57904C40-A9D0-4C00-9635-A579093829A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JourneyMentor.Orchestration.ServiceClients.Messages", "JourneyMentor.Orchestration.ServiceClients.Messages\JourneyMentor.Orchestration.ServiceClients.Messages.csproj", "{49D454C1-C4C2-4AF8-86A8-1D515A7700D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JourneyMentor.Orchestration.ServiceClients.Messages", "JourneyMentor.Orchestration.ServiceClients.Messages\JourneyMentor.Orchestration.ServiceClients.Messages.csproj", "{49D454C1-C4C2-4AF8-86A8-1D515A7700D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JourneyMentor.Orchestration.Tests", "JourneyMentor.Orchestration.Tests\JourneyMentor.Orchestration.Tests.csproj", "{C2624395-D4B6-444C-AB9C-1F2F715BE0E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{49D454C1-C4C2-4AF8-86A8-1D515A7700D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49D454C1-C4C2-4AF8-86A8-1D515A7700D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49D454C1-C4C2-4AF8-86A8-1D515A7700D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2624395-D4B6-444C-AB9C-1F2F715BE0E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2624395-D4B6-444C-AB9C-1F2F715BE0E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2624395-D4B6-444C-AB9C-1F2F715BE0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2624395-D4B6-444C-AB9C-1F2F715BE0E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

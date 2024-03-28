@@ -27,6 +27,10 @@ namespace JourneyMentor.Orchestration.Business.Handlers
                 var requestI = _mapper.Map<GetAirportRequest>(request);
                 var res = await _AirportInterface.GetAirports(requestI);
 
+                if (res == null)
+                {
+                    throw new Exception("Airport response is null.");
+                }
                 var response = _mapper.Map<GetAirportsHandlerResponse>(res);
 
                 return response;
@@ -38,7 +42,7 @@ namespace JourneyMentor.Orchestration.Business.Handlers
                 var errorResponse = new GetAirportsHandlerResponse
                 {
                     StatusMessage = "Error",
-                    ErrorMessage = ex.InnerException.Message,
+                    ErrorMessage = ex.Message,
                     Success = false
                 };
 
