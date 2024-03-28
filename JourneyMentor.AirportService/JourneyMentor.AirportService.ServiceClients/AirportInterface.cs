@@ -4,8 +4,6 @@ using JourneyMentor.AirportService.ServiceClients.Messages.Request;
 using JourneyMentor.AirportService.ServiceClients.Messages.Response;
 using JourneyMentor.AirportService.Services;
 using Microsoft.EntityFrameworkCore;
-using Org.BouncyCastle.Crypto;
-using System.Net.Http;
 using System.Text.Json;
 
 namespace JourneyMentor.AirportService.ServiceClients

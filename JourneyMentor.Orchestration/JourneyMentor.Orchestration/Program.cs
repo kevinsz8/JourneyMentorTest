@@ -29,6 +29,7 @@ builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddScoped<HttpClient>();
 builder.Services.AddScoped<HttpService>();
 builder.Services.AddScoped<IAirportInterface, AirportInterface>();
+builder.Services.AddScoped<IFlightInterface, FlightInterface>();
 
 var app = builder.Build();
 

@@ -1,6 +1,5 @@
 ﻿using JourneyMentor.AirportService.DataAccess;
 using Microsoft.AspNetCore.Mvc;
-using System.Xml.Linq;
 
 namespace JourneyMentor.AirportService.Controllers
 {

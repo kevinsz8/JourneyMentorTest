@@ -12,6 +12,9 @@ namespace JourneyMentor.Orchestration.Business.Mappers
         {
             CreateMap<GetAirportsHandlerRequest, GetAirportRequest>();
             CreateMap<GetAirportResponse, GetAirportsHandlerResponse>();
+
+            CreateMap<GetFlightsHandlerRequest, GetFlightRequest>();
+            CreateMap<GetFlightResponse, GetFlightsHandlerResponse>();
         }
     }
 }

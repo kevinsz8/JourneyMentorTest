@@ -2,8 +2,8 @@
 
 namespace JourneyMentor.Orchestration.ServiceClients.Messages.Response
 {
-    public class GetAirportResponse : BaseResponse
+    public class GetFlightResponse : BaseResponse
     {
-        public List<Airport> Airports { get; set; }
+        public List<Flight> Flights { get; set; }
     }
 }

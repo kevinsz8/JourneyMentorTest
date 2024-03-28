@@ -1,6 +1,6 @@
-﻿namespace JourneyMentor.FlightService.ServiceClients.Messages.Request
+﻿namespace JourneyMentor.Orchestration.ServiceClients.Messages.Request
 {
-    public class GetFlightsRequest
+    public class GetFlightRequest
     {
         public string? DepartureAirport { get; set; }
         public string? ArrivalAirport { get; set; }

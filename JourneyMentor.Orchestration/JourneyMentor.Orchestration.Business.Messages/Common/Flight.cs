@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace JourneyMentor.FlightService.ServiceClients.Messages.Response
+﻿namespace JourneyMentor.Orchestration.Business.Messages.Common
 {
-    public class GetFlightsResponse
+    public class Flight
     {
         public int Id { get; set; }
         public string? FlightDate { get; set; }

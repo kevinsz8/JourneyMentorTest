@@ -5,11 +5,6 @@ using JourneyMentor.FlightService.Services;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JourneyMentor.FlightService.Business.Handlers
 {

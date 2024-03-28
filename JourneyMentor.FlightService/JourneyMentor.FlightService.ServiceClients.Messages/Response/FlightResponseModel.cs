@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace JourneyMentor.FlightService.ServiceClients.Messages.Response
+﻿namespace JourneyMentor.FlightService.ServiceClients.Messages.Response
 {
     public class FlightResponseModel
     {

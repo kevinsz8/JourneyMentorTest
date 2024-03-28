@@ -5,11 +5,6 @@ using JourneyMentor.Orchestration.ServiceClients.Messages.Response;
 using JourneyMentor.Orchestration.Services;
 using MediatR;
 using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace JourneyMentor.Orchestration.ServiceClients
 {

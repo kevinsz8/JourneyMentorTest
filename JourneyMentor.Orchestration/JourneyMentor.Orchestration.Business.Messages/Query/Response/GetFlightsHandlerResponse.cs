@@ -2,8 +2,8 @@
 
 namespace JourneyMentor.Orchestration.Business.Messages.Query.Response
 {
-    public class GetAirportsHandlerResponse : BaseResponse
+    public class GetFlightsHandlerResponse : BaseResponse
     {
-        public List<Airport> Airports { get; set; }
+        public List<Flight> Flights { get; set; }
     }
 }

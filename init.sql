@@ -32,7 +32,7 @@ select * from `Airport`;
 
 CREATE TABLE IF NOT EXISTS Flight (
 	Id INT AUTO_INCREMENT NOT NULL,
-    FlightDate DATE,
+    FlightDate VARCHAR(50),
     FlightStatus VARCHAR(50),
     DepartureAirport VARCHAR(255),
     DepartureTimezone VARCHAR(50),

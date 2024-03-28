@@ -1,6 +1,5 @@
 ﻿using JourneyMentor.FlightService.DataAccess;
 using Microsoft.AspNetCore.Mvc;
-using System.Xml.Linq;
 
 namespace JourneyMentor.FlightService.Controllers
 {
